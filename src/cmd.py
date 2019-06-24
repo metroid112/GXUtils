@@ -24,6 +24,7 @@ def choose_table():
 
 
 def main():
+    core.descartes(['form'])
     print_start()
     command = choose_command()
     # For Each
