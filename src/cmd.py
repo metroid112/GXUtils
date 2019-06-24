@@ -19,6 +19,10 @@ def choose_command():
         return choose_command()
 
 
+def choose_table():
+    return input('Table name: ')
+
+
 def main():
     print_start()
     command = choose_command()
@@ -27,8 +31,9 @@ def main():
         pass
     # New
     if command == 2:
-        print('Command is new')
-        core.command(command)
+        print('New Command')
+        table = choose_table()
+        print(core.command_new(table))
 
 
 if __name__ == '__main__':
