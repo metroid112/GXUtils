@@ -1,9 +1,25 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QDialog
+from PyQt5.QtWidgets import QApplication, QWidget
 
-app = QApplication(sys.argv)
-window = QDialog()
 
-window.show()
-sys.exit(app.exec_())
+class App(QWidget):
 
+    def __init__(self):
+        super().__init__()
+        self.title = 'PyQt5 simple window - pythonspot.com'
+        self.left = 10
+        self.top = 10
+        self.width = 640
+        self.height = 480
+        self.init_ui()
+
+    def init_ui(self):
+        self.setWindowTitle(self.title)
+        self.setGeometry(self.left, self.top, self.width, self.height)
+        self.show()
+
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    ex = App()
+    sys.exit(app.exec_())
